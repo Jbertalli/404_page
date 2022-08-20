@@ -209,6 +209,6 @@
     10% { transform: rotate(-10deg) }
     25% { transform: rotate(25deg) }
     50% { transform: rotate(-50deg) translateX(-27%) translateY(-15%) }
-    100% { transform: rotate(0deg) scale(1,1) translateX(100%) translateY(21%) }
+    100% { transform: rotate(0deg) scale(1,1) translateX(200%) translateY(21%) }
   }
   

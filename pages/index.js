@@ -46,31 +46,50 @@ const NotFound = () => {
             </Head>
             {isDesktop ? (
               <>
-
+                <div className={styles.notfound} style={{ height: '110vh', textAlign: 'center', padding: '14% 20% 0px 20%' }}>
+                  <Container className={styles.numbers} style={{ backgroundColor: '#f2f2f2', borderRadius: '1%', transform: 'translateY(-50px)' }}>
+                      <h1 className={styles.spin} style={{ fontSize: '2000%', color: '#3978f5', opacity: .9, transform: 'translateY(-10px)' }}>404</h1>
+                      <div style={{ transform: 'translateY(-6vh)' }}>
+                        <h2 style={{ fontSize: '30px', color: 'black', opacity: .8, paddingBottom: '1%' }}>Page Not Found</h2>
+                        <h4 style={{ fontSize: '20px', color: 'black', opacity: .8, paddingBottom: '1%' }}>{`Sorry, the webpage you're trying to reach doesn't exist`}</h4>
+                        <Button
+                            icon="home"
+                            content="Return to Homepage"
+                            basic
+                            color='blue'
+                            circular
+                            className={styles.button}
+                            style={{ fontSize: '1.4em', cursor: 'pointer', transform: 'translateY(15px)', marginBottom: '2%' }}
+                            // onClick={() => router.push("/")}
+                        />
+                      </div>
+                  </Container>
+                  <Fishing />
+                </div>
               </>
             ):(
               <>
-
+                <div className={styles.notfound} style={{ height: '105vh', textAlign: 'center', padding: '140px 15% 0px 15%' }}>
+                  <Container className={styles.numbers} style={{ backgroundColor: '#f2f2f2', borderRadius: '1%' }}>
+                      <h1 className={styles.spin} style={{ fontSize: '900%', color: '#3978f5', opacity: .9 }}>404</h1>
+                      <h2 style={{ fontSize: '30px', color: 'black', opacity: .8, transform: 'translateY(-30px)' }}>Page Not Found</h2>
+                      <h4 style={{ fontSize: '20px', color: 'black', opacity: .8, padding: '20px', transform: 'translateY(-50px)' }}>{`Sorry, the webpage you're trying to reach doesn't exist`}</h4>
+                      <Button
+                          icon="home"
+                          content="Return to Homepage"
+                          basic
+                          color='blue'
+                          circular
+                          className={styles.button}
+                          style={{ fontSize: '1em', cursor: 'pointer', padding: '1em', transform: 'translateY(-50px)' }}
+                          // onClick={() => router.push("/")}
+                      />
+                  </Container>
+                  {/* <Fishing /> */}
+                </div>
               </>
             )}
-            <div className={styles.notfound} style={{ height: '100vh', textAlign: 'center', padding: '10em 0em 5em 0em' }}>
-                <Container className={styles.numbers} style={{ backgroundColor: '#f2f2f2', padding: '0em 0em 7em 0em', borderRadius: '1%' }}>
-                    <h1 className={styles.spin} style={{ fontSize: '2000%', color: '#3978f5', opacity: .9 }}>404</h1>
-                    <h2 style={{ fontSize: '300%', color: 'black', opacity: .8 }}>Page Not Found</h2>
-                    <h3 style={{ fontSize: '200%', color: 'black', opacity: .8, padding: '1.2em' }}>{`Sorry, the webpage you're trying to reach doesn't exist`}</h3>
-                    <Button
-                        icon="home"
-                        content="Return to Homepage"
-                        basic
-                        color='blue'
-                        circular
-                        className={styles.button}
-                        style={{ fontSize: '1.4em', cursor: 'pointer', padding: '1em' }}
-                        onClick={() => router.push('/')}
-                    />
-                </Container>
-                <Fishing />
-            </div>
+            
         </>
     );
 }
