@@ -1,254 +1,48 @@
 import Head from 'next/head';
-import { Container, Divider, Icon, Grid } from 'semantic-ui-react';
-import styles from '../styles/ipad.module.css';
-import { useEffect, useState } from 'react';
+import { useEffect } from 'react';
+import { Router, useRouter } from 'next/router';
+import { Button, Container } from 'semantic-ui-react';
+import styles from '../styles/404.module.css';
+import Fishing from '../components/Fishing';
 
 const NotFound = () => {
-    const [isDesktop, setDesktop] = useState(false);
+    const router = useRouter();
+    console.error('Page Not Found');
+
+    // useEffect(() => {
+    //     setTimeout(() => {
+    //         router.push('/');
+    //     }, 5000)
+    // }, [])
 
     useEffect(() => {
         document.body.style.overflow = "hidden";
-    return () => {
-        document.body.style.overflow = "visible";
-        }
-    }, []);
-
-    useEffect(() => {
-        if (window.innerWidth > 1500) {
-            setDesktop(true);
-        } else {
-            setDesktop(false);
-        }
-
-        const updateMedia = () => {
-        if (window.innerWidth > 1500) {
-            setDesktop(true);
-        } else {
-            setDesktop(false);
-        }
-        };
-        window.addEventListener('resize', updateMedia);
-        return () => window.removeEventListener('resize', updateMedia);
-    }, []);
-
+      }, []);
+    
     return (
         <>
             <Head>
-                <title>Page Not Found - Apple</title>
-                <meta name="description" content="apple, ipad" />
+                <title>404 Not Found</title>
+                <meta name="description" content="404, not found" />
             </Head>
-            <Container style={{ position: 'static' }}>
-                <div>
-                    <div style={{ fontSize: '48px', display: 'flex', justifyContent: 'center', fontFamily: 'Helvetica', fontWeight: '500', lineHeight: '52px', marginTop: '92px' }}>
-                        The page you are looking
-                    </div>
-                    <div style={{ fontSize: '48px', display: 'flex', justifyContent: 'center', fontFamily: 'Helvetica', fontWeight: '500', lineHeight: '52px' }}>
-                        for cannot be found.
-                    </div>
-                    <div style={{ display: 'flex', justifyContent: 'center', transform: 'translateY(54px)' }}>
-                        <div style={{ border: '1px solid #d6d6d6', padding: '17px 49px 1px 16px', width: '490px', height: '56px', lineHeight: '21px', fontSize: '17px', fontFamily: 'Helvetica', fontWeight: '400', marginBottom: '14px', borderRadius: '4px', color: '#d6d6d6', cursor: 'text' }}>
-                            <Icon
-                                name="search"
-                            />
-                            &nbsp;&nbsp;Search apple.com
-                        </div> 
-                    </div>
-                    <div style={{ color: '#0070c9', cursor: 'pointer', fontSize: '17px', fontWeight: '400', lineHeight: '25px', textAlign: 'center', transform: 'translateY(65px)', opacity: '0.8' }}>
-                        <a className={styles.bluehovering}>Or see our site map</a>
-                        <Icon
-                        name="angle right"
-                        style={{ transform: 'scale(1) translate(0px, .7px)' }}
+            <div className={styles.notfound} style={{ height: '100vh', textAlign: 'center', padding: '10em 0em 5em 0em' }}>
+                <Container className={styles.numbers} style={{ backgroundColor: '#f2f2f2', padding: '0em 0em 7em 0em', borderRadius: '1%' }}>
+                    <h1 className={styles.spin} style={{ fontSize: '2000%', color: '#3978f5', opacity: .9 }}>404</h1>
+                    <h2 style={{ fontSize: '300%', color: 'black', opacity: .8 }}>Page Not Found</h2>
+                    <h3 style={{ fontSize: '200%', color: 'black', opacity: .8, padding: '1.2em' }}>{`Sorry, the webpage you're trying to reach doesn't exist`}</h3>
+                    <Button
+                        icon="home"
+                        content="Return to Homepage"
+                        basic
+                        color='blue'
+                        circular
+                        className={styles.button}
+                        style={{ fontSize: '1.4em', cursor: 'pointer', padding: '1em' }}
+                        onClick={() => router.push('/')}
                     />
-                    </div>
-                </div>
-            </Container>
-            <div style={{ height: '795px', width: '100%', background: '#f5f5f7', position: 'static', zIndex: '-1', transform: 'translateY(203px)' }} />
-            <div style={{ position: 'static', zIndex: '1', transform: 'translate(-4px, -538px)', cursor: 'pointer', fontSize: '12px', fontWeight: '400', textAlign: 'left', fontFamily: 'Helvetica', color: '#424245', display: 'flex', justifyContent: 'center', marginLeft: '-145px' }}>
-                <div style={{ transform: 'translate(128px, -34px)'}}>
-                    <Icon
-                        name="apple"
-                        style={{ transform: 'scale(1.3) translateY(-1px)' }}
-                    />
-                    <Icon
-                        name="angle right"
-                        style={{ transform: 'scale(1.4, 2) translate(2px, -1.7px)', opacity: '0.2'}}
-                    />
-                    <span style={{ fontWeight: '100', fontSize: '12px'}}>&nbsp;&nbsp;Page Not Found</span>  
-                </div>
-                <Grid>
-                    <Grid.Column style={{ width: '196px', lineHeight: '25.6px' }}>
-                        <b>
-                            Shop and Learn
-                        </b>
-                        <div style={{ fontWeight: '100' }}>
-                            <div className={styles.hovering}>Store</div>
-                            <div className={styles.hovering}>Mac</div>
-                            <div className={styles.hovering}>iPad</div>
-                            <div className={styles.hovering}>iPhone</div>
-                            <div className={styles.hovering}>Watch</div>
-                            <div className={styles.hovering}>AirPods</div>
-                            <div className={styles.hovering}>TV & Home</div>
-                            <div className={styles.hovering}>AirTag</div>
-                            <div className={styles.hovering}>Accessories</div>
-                            <div className={styles.hovering}>Gift Cards</div>
-                        </div>
-                    </Grid.Column>
-                    <Grid.Column style={{ width: '196px', lineHeight: '25.6px' }}>
-                        <b>
-                            Services
-                        </b>
-                        <div style={{ fontWeight: '100' }}>
-                            <div className={styles.hovering}>Apple Music</div>
-                            <div className={styles.hovering}>Apple TV+</div>
-                            <div className={styles.hovering}>Apple Fitness+</div>
-                            <div className={styles.hovering}>Apple News+</div>
-                            <div className={styles.hovering}>Apple Arcade</div>
-                            <div className={styles.hovering}>iCloud</div>
-                            <div className={styles.hovering}>Apple One</div>
-                            <div className={styles.hovering}>Apple Card</div>
-                            <div className={styles.hovering}>Apple Books</div>
-                            <div className={styles.hovering}>Apple Podcasts</div>
-                            <div className={styles.hovering}>App Store</div>
-                        </div>
-                        <div style={{ transform: 'translateY(15px)', marginBottom: '15px' }}>
-                            <b>
-                                Account
-                            </b>
-                        </div>
-                        <div style={{ fontWeight: '100' }}>
-                            <div className={styles.hovering}>Manage Your Apple ID</div>
-                            <div className={styles.hovering}>Apple Store Account</div>
-                            <div className={styles.hovering}>iCloud.com</div> 
-                        </div>
-                    </Grid.Column>
-                    <Grid.Column style={{ width: '196px', lineHeight: '25.6px' }}>
-                        <b>
-                            Apple Store
-                        </b>
-                        <div style={{ fontWeight: '100' }}>
-                            <div className={styles.hovering}>Find a Store</div>
-                            <div className={styles.hovering}>Genius Bar</div>
-                            <div className={styles.hovering}>Today at Apple</div>
-                            <div className={styles.hovering}>Apple Camp</div>
-                            <div className={styles.hovering}>Apple Store App</div>
-                            <div className={styles.hovering}>Refurbished and Clearance</div>
-                            <div className={styles.hovering}>Financing</div>
-                            <div className={styles.hovering}>Apple Trade In</div>
-                            <div className={styles.hovering}>Order Status</div>
-                            <div className={styles.hovering}>Shopping Help</div>
-                        </div>
-                    </Grid.Column>
-                    <Grid.Column style={{ width: '196px', lineHeight: '25.1px' }}>
-                        <div style={{ marginBottom: '5px' }}>
-                            <b>
-                                For Business
-                            </b>
-                        </div>
-                        <div style={{ fontWeight: '100' }}>
-                            <div className={styles.hovering}>Apple and Business</div>
-                            <div className={styles.hovering}>Shop for Business</div>
-                        </div>
-                        <div style={{ transform: 'translateY(15px)', marginBottom: '15px' }}>
-                            <b>
-                                For Education
-                            </b> 
-                        </div>
-                        <div style={{ fontWeight: '100' }}>
-                            <div className={styles.hovering}>Apple and Education</div>
-                            <div className={styles.hovering}>Shop for K-12</div>
-                            <div className={styles.hovering}>Shop for College</div> 
-                        </div>
-                        <div style={{ transform: 'translateY(15px)', marginBottom: '15px' }}>
-                            <b>
-                                For Healthcare
-                            </b> 
-                        </div>
-                        <div style={{ fontWeight: '100' }}>
-                            <div className={styles.hovering}>Apple in Healthcare</div>
-                            <div className={styles.hovering}>Health on Apple Watch</div>
-                            <div className={styles.hovering}>Health Records on iPhone</div>
-                        </div>
-                        <div style={{ transform: 'translateY(15px)', marginBottom: '15px' }}>
-                            <b>
-                                For Government
-                            </b>
-                        </div>
-                        <div style={{ fontWeight: '100' }}>
-                            <div className={styles.hovering}>Shop for Government</div>
-                            <div className={styles.hovering}>Shop for Veterans and Military</div>
-                        </div>
-                    </Grid.Column>
-                    <Grid.Column style={{ width: '196px', lineHeight: '25.2px' }}>
-                        <div style={{ marginBottom: '5px' }}>
-                            <b>
-                                Apple Values
-                            </b>
-                        </div>
-                        <div style={{ fontWeight: '100' }}>
-                            <div className={styles.hovering}>Accessibility</div>
-                            <div className={styles.hovering}>Education</div>
-                            <div className={styles.hovering}>Environment</div>
-                            <div className={styles.hovering}>Inclusion and Diversity</div>
-                            <div className={styles.hovering}>Privacy</div>
-                            <div className={styles.hovering}>Racial Equity and Justice</div>
-                            <div className={styles.hovering}>Supplier Responsibility</div> 
-                        </div>
-                        <div style={{ transform: 'translateY(15px)', marginBottom: '15px' }}>
-                            <b>
-                                About Apple
-                            </b>
-                        </div>
-                        <div style={{ fontWeight: '100' }}>
-                            <div className={styles.hovering}>Newsroom</div>
-                            <div className={styles.hovering}>Apple Leadership</div>
-                            <div className={styles.hovering}>Career Opportunities</div>
-                            <div className={styles.hovering}>Investors</div>
-                            <div className={styles.hovering}>Ethics & Compliance</div>
-                            <div className={styles.hovering}>Events</div>
-                            <div className={styles.hovering}>Contact Apple</div>
-                        </div>
-                    </Grid.Column>
-                </Grid>
+                </Container>
+                <Fishing />
             </div>
-            {isDesktop ? (<>
-                <div style={{ transform: 'translate(259px, -513px)', fontSize: '12px', fontWeight: '400', color: '#6e6e73', display: 'flex', justifyContent: 'center' }}>
-                    <span>More ways to shop:&nbsp;<a className={styles.bluehovering} style={{ color: '#0070c9', cursor: 'pointer' }}>Find an Apple Store</a>&nbsp;or&nbsp;<a className={styles.bluehovering} style={{ color: '#0070c9', cursor: 'pointer' }}>other retailer</a>&nbsp;near you. Or call 1-800-MY-APPLE.</span>
-                    <span style={{ cursor: 'pointer', width: '980px', transform: 'translate(-518px, 33.5px)', fontSize: '12px', fontWeight: '400', color: '#6e6e73', display: 'flex', justifyContent: 'center' }}>
-                        <div>
-                            Copyright © 2022 Apple Inc. All rights reserved.
-                        </div>
-                        <div>
-                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                            Privacy Policy&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
-                        </div>
-                        <div>
-                            Terms of Use&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
-                        </div>
-                        <div>
-                            Sales and Refunds&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
-                        </div>
-                        <div>
-                            Legal&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
-                        </div>
-                        <div>
-                            Site Map&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                        </div>
-                        <div>
-                            United States
-                        </div>
-                    </span>
-                </div>
-                <center>
-                    <Divider style={{ width: '980px', transform: 'translate(0px, -520px)' }} />
-                </center>
-            </>
-            ):(
-            <>
-                <div>
-                    Copyright © 2022 Apple Inc. All rights reserved.
-                </div>
-            </>
-            )}
         </>
     );
 }
