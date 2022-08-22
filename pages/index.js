@@ -60,6 +60,7 @@ const NotFound = () => {
                             circular
                             className={styles.button}
                             style={{ fontSize: '1.4em', cursor: 'pointer', transform: 'translateY(15px)', marginBottom: '2%' }}
+                            // add link to custom homepage here
                             // onClick={() => router.push("/")}
                         />
                       </div>
@@ -82,6 +83,7 @@ const NotFound = () => {
                           circular
                           className={styles.button}
                           style={{ fontSize: '1em', cursor: 'pointer', padding: '1em', transform: 'translateY(-50px)' }}
+                          // add link to custom homepage here
                           // onClick={() => router.push("/")}
                       />
                   </Container>
