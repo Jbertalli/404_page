@@ -1,11 +1,12 @@
 {
-  "name": "404page",
+  "name": "@julianbertalli/404page",
   "version": "0.1.0",
-  "private": true,
+  "description": "404 page",
+  "main": "index.js",
   "scripts": {
-    "dev": "next dev -p 3015",
+    "dev": "next dev -p 3025",
     "build": "next build",
-    "start": "next start -p $PORT",
+    "start": "next start -p 3025",
     "lint": "next lint"
   },
   "dependencies": {
@@ -18,5 +19,6 @@
   "devDependencies": {
     "eslint": "8.22.0",
     "eslint-config-next": "12.2.5"
-  }
+  },
+  "author": "Julian Bertalli"
 }
