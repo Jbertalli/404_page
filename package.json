@@ -20,5 +20,9 @@
     "eslint": "8.22.0",
     "eslint-config-next": "12.2.5"
   },
+  "keywords": [
+    "404",
+    "not found"
+  ],
   "author": "Julian Bertalli"
 }
