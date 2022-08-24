@@ -4,11 +4,11 @@
 ## Mobile
 ![Alt text](public/images/404_mobile.png?raw=true)
 
-<!-- ## GIF (fishing pole animation)
+## GIF (fishing pole animation)
 
 ## Technologies
 * CSS
 * HTML
 * JavaScript
 * React
-* Semantic-UI-React -->
+* Semantic-UI-React
