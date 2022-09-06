@@ -71,10 +71,10 @@ const NotFound = () => {
             ):(
               <>
                 <div className={styles.notfound} style={{ height: '105vh', textAlign: 'center', padding: '140px 15% 0px 15%' }}>
-                  <Container className={styles.numbers} style={{ backgroundColor: '#f2f2f2', borderRadius: '1%' }}>
+                  <Container className={styles.numbers} style={{ backgroundColor: '#f2f2f2', borderRadius: '1%', height: '70%' }}>
                       <h1 className={styles.spin} style={{ fontSize: '900%', color: '#3978f5', opacity: .9 }}>404</h1>
                       <h2 style={{ fontSize: '30px', color: 'black', opacity: .8, transform: 'translateY(-30px)' }}>Page Not Found</h2>
-                      <h4 style={{ fontSize: '20px', color: 'black', opacity: .8, padding: '20px', transform: 'translateY(-50px)' }}>{`Sorry, the webpage you're trying to reach doesn't exist`}</h4>
+                      <h6 style={{ fontSize: '15px', color: 'black', opacity: .8, padding: '20px', transform: 'translateY(-70px)' }}>{`Sorry, the webpage you're trying to reach doesn't exist`}</h6>
                       <Button
                           icon="home"
                           content="Return to Homepage"
@@ -82,7 +82,7 @@ const NotFound = () => {
                           color='blue'
                           circular
                           className={styles.button}
-                          style={{ fontSize: '1em', cursor: 'pointer', padding: '1em', transform: 'translateY(-50px)' }}
+                          style={{ fontSize: '1em', cursor: 'pointer', padding: '1em', transform: 'translateY(-100px)' }}
                           // add link to custom homepage here
                           // onClick={() => router.push("/")}
                       />
