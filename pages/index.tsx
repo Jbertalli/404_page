@@ -6,8 +6,8 @@ import styles from '../styles/404.module.css';
 import Fishing from '../components/Fishing';
 
 const NotFound = () => {
-    const [isDesktop, setDesktop] = useState(false);
-    const router = useRouter();
+    const [isDesktop, setDesktop] = useState<boolean>(false);
+    const router: any = useRouter();
     console.error('Page Not Found');
 
     // useEffect(() => {

@@ -9,6 +9,6 @@
 ## Technologies
 * CSS
 * HTML
-* JavaScript
+* TypeScript
 * React
 * Semantic-UI-React
